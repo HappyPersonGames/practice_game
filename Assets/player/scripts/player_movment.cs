@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
 using System.Collections;
@@ -36,7 +37,7 @@ public class player_movment : MonoBehaviour
 
     private void FixedUpdate()
     {
-        is_in_air = prev_y != rb2.position.y;
+        is_in_air = Math.Abs( prev_y - rb2.position.y) > 0.01f;
         
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
         if(jump && !is_in_air)
