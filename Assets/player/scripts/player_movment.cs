@@ -15,8 +15,8 @@ public class player_movment : MonoBehaviour
     private float prev_y;
     private bool is_in_air;
 
-    public float speed;
-    public float jump_force;
+    public float speed = 10;
+    public float jump_force = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +35,14 @@ public class player_movment : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {   
+    {
+        is_in_air = prev_y != rb2.position.y;
+        
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
         if(jump && !is_in_air)
         {
             Debug.Log("jump");
-            rb2.AddForce(new Vector2(0f, 4f * jump_force));
+            rb2.AddForce(new Vector2(0f, 100f * jump_force));
         }
         jump = false;
         prev_y = rb2.position.y;
