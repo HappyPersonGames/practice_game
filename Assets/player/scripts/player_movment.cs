@@ -12,8 +12,6 @@ public class player_movment : MonoBehaviour
 
     private float horizontal_movement;
     private bool jump;
-
-    private float prev_y;
     private bool is_in_air;
 
     public float speed = 10;
@@ -36,9 +34,7 @@ public class player_movment : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        is_in_air = Math.Abs( prev_y - rb2.position.y) > 0.01f;
-        
+    {   
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
         if(jump && !is_in_air)
         {
@@ -46,7 +42,21 @@ public class player_movment : MonoBehaviour
             rb2.AddForce(new Vector2(0f, 100f * jump_force));
         }
         jump = false;
-        prev_y = rb2.position.y;
-        // rb2.Move(horizontal_movement, false, false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "platform")
+        {
+            is_in_air = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "platform")
+        {
+            is_in_air = true;
+        }
     }
 }
