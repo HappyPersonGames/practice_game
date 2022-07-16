@@ -40,25 +40,24 @@ public class player_movment : MonoBehaviour
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
         if(jump && !is_in_air)
         {
-            Debug.Log("jump");
             rb2.AddForce(new Vector2(0f, 100f * jump_force));
         }
         jump = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(jumpCollider.IsTouching(other));
-        if((other.gameObject.tag == "platform" || other.gameObject.tag == "throwable") && jumpCollider.IsTouching(other))
+        if( jumpCollider.IsTouching(other))
         {
             is_in_air = false;
         }
     }
 
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         
-        if((other.gameObject.tag == "platform" || other.gameObject.tag == "throwable") && !jumpCollider.IsTouching(other))
+        if(!jumpCollider.IsTouching(other))
         {
             is_in_air = true;
         }
