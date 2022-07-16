@@ -11,8 +11,10 @@ public class player_movment : MonoBehaviour
     private Rigidbody2D rb2;
 
     private float horizontal_movement;
-    private bool jump;
-    private bool is_in_air;
+    public bool jump;
+    public bool is_in_air;
+
+    public Collider2D jumpCollider;
 
     public float speed = 10;
     public float jump_force = 5;
@@ -46,7 +48,8 @@ public class player_movment : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "platform")
+        Debug.Log(jumpCollider.IsTouching(other));
+        if((other.gameObject.tag == "platform" || other.gameObject.tag == "throwable") && jumpCollider.IsTouching(other))
         {
             is_in_air = false;
         }
@@ -54,7 +57,8 @@ public class player_movment : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "platform")
+        
+        if((other.gameObject.tag == "platform") && !jumpCollider.IsTouching(other))
         {
             is_in_air = true;
         }

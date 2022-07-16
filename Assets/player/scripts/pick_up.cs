@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pickup : MonoBehaviour
+public class pick_up : MonoBehaviour
 {
     private bool isUp;
     public Vector2 position;
@@ -26,7 +26,9 @@ public class pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-
+        Debug.Log(collider);
+        collider.transform.SetParent(this.transform);
+        collider.transform.position = position;
     }
 
      private void OnTriggerExit2D(Collider2D collider)
