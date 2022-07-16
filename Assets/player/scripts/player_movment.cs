@@ -58,7 +58,7 @@ public class player_movment : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         
-        if((other.gameObject.tag == "platform") && !jumpCollider.IsTouching(other))
+        if((other.gameObject.tag == "platform" || other.gameObject.tag == "throwable") && !jumpCollider.IsTouching(other))
         {
             is_in_air = true;
         }
