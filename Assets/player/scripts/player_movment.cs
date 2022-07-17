@@ -40,11 +40,12 @@ public class player_movment : MonoBehaviour
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
         if(horizontal_movement < 0)
         {
-            this.gameObject.transform.localScale.x = -1;
+            this.gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
+            
         }
-        else
+        else if(horizontal_movement > 0)
         {
-            this.gameObject.transform.localScale.x = 1;
+            this.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         if(jump && !is_in_air)
         {

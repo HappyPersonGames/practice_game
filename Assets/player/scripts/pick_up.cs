@@ -6,7 +6,8 @@ public class pick_up : MonoBehaviour
 {
     private Rigidbody2D rb2;
     public bool isUp;
-    public Vector3 position = new Vector3(0.2f,3,0);
+    public Vector3 position;
+    public Vector2 throw_force = new Vector2(1000, 1000);
     public Collider2D pickupCol;
     public GameObject map;
     public GameObject picked;
@@ -23,6 +24,16 @@ public class pick_up : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.transform.localScale.x > 0)
+        {
+            position.x = 1.2f;
+            throw_force.x = 1000;
+        }
+        if(this.transform.localScale.x < 0)
+        {
+            position.x = -1.2f;
+            throw_force.x = -1000;
+        }
         if(Input.GetKeyDown(KeyCode.F))
         {
             pressed_key = true;
@@ -34,6 +45,16 @@ public class pick_up : MonoBehaviour
         if(isUp)
         {
             picked.transform.position = this.transform.position + position;
+            if(pressed_key)
+            {
+                picked.gameObject.transform.SetParent(map.transform);
+                picked.GetComponent<Rigidbody2D>().gravityScale = 10;
+                picked.GetComponent<Rigidbody2D>().freezeRotation = false;
+                picked.GetComponent<Rigidbody2D>().AddForce(throw_force);
+                isUp = false;
+                picked = null;
+                pressed_key = false;
+            }
         }
 
     }
@@ -61,13 +82,7 @@ public class pick_up : MonoBehaviour
         else if(pressed_key && pickupCol.IsTouching(other) && isUp)
         {
             // Debug.Log("bye");
-            picked.gameObject.transform.SetParent(map.transform);
-            other.attachedRigidbody.gravityScale = 10;
-            other.attachedRigidbody.freezeRotation = false;
-            other.attachedRigidbody.AddForce(new Vector2(1000, 1000));
-            isUp = false;
-            picked = null;
-            pressed_key = false;
+            
         }
     }
 }
