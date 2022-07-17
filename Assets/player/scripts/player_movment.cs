@@ -38,6 +38,14 @@ public class player_movment : MonoBehaviour
     private void FixedUpdate()
     {   
         rb2.velocity = new Vector2(horizontal_movement * speed, 0);
+        if(horizontal_movement < 0)
+        {
+            this.gameObject.transform.localScale.x = -1;
+        }
+        else
+        {
+            this.gameObject.transform.localScale.x = 1;
+        }
         if(jump && !is_in_air)
         {
             rb2.AddForce(new Vector2(0f, 100f * jump_force));
