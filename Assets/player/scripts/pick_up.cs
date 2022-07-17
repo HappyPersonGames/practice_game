@@ -59,17 +59,10 @@ public class pick_up : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        // pressed_key = false;
-    }
-
     private void OnTriggerStay2D(Collider2D other)
     {
-        // Debug.Log("touching " + Input.GetKeyDown(KeyCode.F) + other.name);
-        if(pressed_key && pickupCol.IsTouching(other) && !isUp)
+        if(pressed_key && pickupCol.IsTouching(other) && !isUp && other.gameObject.tag == "throwable")
         {
-            // Debug.Log("hello");
             picked = other.gameObject;
             other.attachedRigidbody.freezeRotation = true;
             other.gameObject.transform.SetParent(this.gameObject.transform);
@@ -81,7 +74,6 @@ public class pick_up : MonoBehaviour
         }
         else if(pressed_key && pickupCol.IsTouching(other) && isUp)
         {
-            // Debug.Log("bye");
             
         }
     }
