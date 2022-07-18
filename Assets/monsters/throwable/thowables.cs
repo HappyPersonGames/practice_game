@@ -19,7 +19,8 @@ public class thowables : MonoBehaviour
         if(this.transform.position.x == last_pos.x && this.transform.position.y == last_pos.y)
         {
             movement = false;
-            is_thrown = false;
+
+            //is_thrown = false;
         }
         else
         {

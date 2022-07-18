@@ -56,7 +56,7 @@ public class player_movment : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if( jumpCollider.IsTouching(other))
+        if(jumpCollider.IsTouching(other))
         {
             is_in_air = false;
         }

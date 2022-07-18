@@ -9,6 +9,7 @@ TagManager:
   - throwable
   - map
   - pain_ball
+  - edge
   layers:
   - Default
   - TransparentFX
