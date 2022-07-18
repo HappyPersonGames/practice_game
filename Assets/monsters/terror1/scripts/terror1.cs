@@ -32,8 +32,8 @@ public class terror1 : MonoBehaviour
 
         if(GetComponent<thowables>().is_thrown && other.tag != "player_pickup")
         {
-            health -= this.GetComponent<thowables>().damage;
             GetComponent<thowables>().is_thrown = false;
+            health -= this.GetComponent<thowables>().damage;
         }
     }
 }
