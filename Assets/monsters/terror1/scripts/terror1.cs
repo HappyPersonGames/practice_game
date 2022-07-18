@@ -23,10 +23,17 @@ public class terror1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        thowables throwable = (thowables)other.GetComponent<thowables>();
         Debug.Log("hit");
-        if(other.tag == "throwable" && other.GetComponent<thowables>().movement)
+        if(other.tag == "throwable" && throwable.movement)
         {
             health -= other.GetComponent<thowables>().damage;
+        }
+
+        if(GetComponent<thowables>().is_thrown && other.tag != "player_pickup")
+        {
+            health -= this.GetComponent<thowables>().damage;
+            GetComponent<thowables>().is_thrown = false;
         }
     }
 }

@@ -8,7 +8,7 @@ public class thowables : MonoBehaviour
     public bool movement = false;
     // Start is called before the first frame update
     private Vector3 last_pos = new Vector2(0,0);
-    
+    public bool is_thrown = false;
     void Start() 
     {
         damage *= this.GetComponent<Rigidbody2D>().mass;    
@@ -19,6 +19,7 @@ public class thowables : MonoBehaviour
         if(this.transform.position.x == last_pos.x && this.transform.position.y == last_pos.y)
         {
             movement = false;
+            is_thrown = false;
         }
         else
         {

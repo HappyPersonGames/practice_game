@@ -51,6 +51,7 @@ public class pick_up : MonoBehaviour
                 picked.GetComponent<Rigidbody2D>().gravityScale = 10;
                 picked.GetComponent<Rigidbody2D>().freezeRotation = false;
                 picked.GetComponent<Rigidbody2D>().AddForce(throw_force);
+                picked.GetComponent<thowables>().is_thrown = true;
                 isUp = false;
                 picked = null;
                 pressed_key = false;
