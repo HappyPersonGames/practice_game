@@ -17,7 +17,7 @@ public class player_movment : MonoBehaviour
     public Collider2D jumpCollider;
 
     public float speed = 10;
-    public float jump_force = 5;
+    public float jump_force = 215;
 
     // Start is called before the first frame update
     void Start()

@@ -17,7 +17,11 @@ public class terror1 : MonoBehaviour
     {
         if(health <= 0)
         {
-            this.gameObject.GetComponentInChildren<SpriteRenderer>().material = dead;
+            if(this.gameObject.GetComponentInChildren<SpriteRenderer>().material != dead)
+            {
+                Destroy(gameObject, 5);
+                this.gameObject.GetComponentInChildren<SpriteRenderer>().material = dead;
+            }
         }
     }
 
