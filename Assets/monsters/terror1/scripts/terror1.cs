@@ -21,6 +21,7 @@ public class terror1 : MonoBehaviour
             {
                 Destroy(gameObject, 5);
                 this.gameObject.GetComponentInChildren<SpriteRenderer>().material = dead;
+                this.tag = "Untagged";
             }
         }
     }
