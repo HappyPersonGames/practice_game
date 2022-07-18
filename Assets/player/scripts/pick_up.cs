@@ -48,12 +48,10 @@ public class pick_up : MonoBehaviour
             if(pressed_key)
             {
                 picked.GetComponent<thowables>().is_thrown = true;
-                Debug.Log("thrown");
                 picked.gameObject.transform.SetParent(map.transform);
                 picked.GetComponent<Rigidbody2D>().gravityScale = 10;
                 picked.GetComponent<Rigidbody2D>().freezeRotation = false;
                 picked.GetComponent<Rigidbody2D>().AddForce(throw_force);
-                
                 isUp = false;
                 picked = null;
                 pressed_key = false;
