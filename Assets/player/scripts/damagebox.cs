@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class combat : MonoBehaviour
+public class damagebox : MonoBehaviour
 {
-    public float health = 100f;
-    public GameObject body;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +14,15 @@ public class combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
-        {
-            death();
-        }
+        
     }
 
-    void death()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if(other.tag == "pain_ball")
+        {
+            gameObject.GetComponentInParent<combat>().health -= 10;
+            Destroy(other.gameObject);
+        }
     }
 }
