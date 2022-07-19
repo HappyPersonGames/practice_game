@@ -14,13 +14,13 @@ public class thowables : MonoBehaviour
         damage *= this.GetComponent<Rigidbody2D>().mass;    
     }
 
-    void FixedUpdate() 
+    void Update() 
     {
         if(this.transform.position.x == last_pos.x && this.transform.position.y == last_pos.y)
         {
             movement = false;
 
-            //is_thrown = false;
+            is_thrown = false;
         }
         else
         {
