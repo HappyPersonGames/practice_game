@@ -47,6 +47,7 @@ public class pick_up : MonoBehaviour
             picked.transform.position = this.transform.position + position;
             if(pressed_key)
             {
+                picked.GetComponent<thowables>().is_picked = false;
                 picked.GetComponent<thowables>().is_thrown = true;
                 picked.gameObject.transform.SetParent(map.transform);
                 picked.GetComponent<Rigidbody2D>().gravityScale = 10;
@@ -65,6 +66,7 @@ public class pick_up : MonoBehaviour
         if(pressed_key && pickupCol.IsTouching(other) && !isUp && other.gameObject.tag == "throwable")
         {
             picked = other.gameObject;
+            picked.GetComponent<thowables>().is_picked = true;
             other.attachedRigidbody.freezeRotation = true;
             other.gameObject.transform.SetParent(this.gameObject.transform);
             other.attachedRigidbody.gravityScale = 0;

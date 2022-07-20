@@ -6,7 +6,7 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     public GameObject projctile;
-    public bool should_shoot = true;
+    public bool should_shoot = false;
     private float curr;
     private GameObject[] players;
     // Start is called before the first frame update
