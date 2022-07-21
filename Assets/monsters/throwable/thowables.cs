@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum State{idle, thrown, picked_up, attack, dead}
+public enum State{idle, thrown, picked_up, attack, dead, defualt}
 
 public class thowables : MonoBehaviour
 {
     public float damage;
-    // public bool movement = false;
-    // Start is called before the first frame update
-    // private Vector3 last_pos = new Vector2(0,0);
     public bool is_thrown = false;
     public bool is_picked = false;
     
@@ -19,30 +16,11 @@ public class thowables : MonoBehaviour
     public State state;
     void Start() 
     {
-        // damage *= this.GetComponent<Rigidbody2D>().mass;
         state = State.idle;
     }
 
     void Update() 
     {
-        // if(GetComponent<BoxCollider2D>().IsTouchingLayers(layerMask))
-        // {
-        // }
-        // else
-        // {
-            
-        // }
-        // if(this.transform.position.x == last_pos.x && this.transform.position.y == last_pos.y)
-        // {
-        //     movement = false;
-
-        //     is_thrown = false;
-        // }
-        // else
-        // {
-        //     movement = true;
-        // }
-        // last_pos = this.transform.position;
         set_state();
         if(state == State.idle || state == State.picked_up)
         {

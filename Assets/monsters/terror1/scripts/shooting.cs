@@ -20,7 +20,7 @@ public class shooting : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         
-        if(should_shoot && Time.fixedTime - curr > 3 && players.Length > 0 && GetComponent<terror1>().health > 0)
+        if(GetComponent<terror1>().state == State.attack)
         {
             curr = Time.fixedTime;
             should_shoot = false;

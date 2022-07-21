@@ -8,11 +8,13 @@ public class terror1 : thowables
     public float health = 100;
     public Material dead;
     public bool isDetected = false;
-    // Start is called before the first frame update
+    private float y_start = 0;
+    private float y_end = 0;
     
     // Update is called once per frame
     void Update()
     {
+        isDetected = GetComponent<terror_movment>().isDetected;
         if(health <= 0)
         {
             if(this.gameObject.GetComponentInChildren<SpriteRenderer>().material != dead)
@@ -22,16 +24,19 @@ public class terror1 : thowables
                 this.tag = "Untagged";
             }
         }
-        if(state == State.thrown)
-        {
-            if(damage < 30f)
-                damage += 0.1f;
-        }
         else
         {
             damage = 0;
         }
+        bool tempState = (state == State.thrown);
         set_state();
+        if(tempState && state == State.idle)
+        {
+            damage = 5*Mathf.Abs(y_start-y_end);
+            health -= damage;
+            //Debug.Log(name + " got " + damage + " fall damage");
+        }
+            
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,13 +44,7 @@ public class terror1 : thowables
         if(other.tag == "throwable")
         {
             health -= other.GetComponent<thowables>().damage;
-            Debug.Log(name + " got " + other.GetComponent<thowables>().damage + " from "+ other.name);
-        }
-
-        if(state == State.thrown)
-        {
-            health -= damage;
-            Debug.Log(name + " got " + damage + " fall damage");
+           // Debug.Log(name + " got " + other.GetComponent<thowables>().damage + " from "+ other.name);
         }
     }
 
@@ -58,9 +57,10 @@ public class terror1 : thowables
             is_thrown = false;
             is_picked = false;
         }
-        else if(GetComponent<BoxCollider2D>().IsTouchingLayers(layerMask))
+        else if(GetComponent<BoxCollider2D>().IsTouchingLayers(layerMask) && (!isDetected || state == State.thrown))
         {
-            Debug.Log("idle");
+            if(state == State.thrown)
+                y_end = transform.position.y;
             state = State.idle;
             is_thrown = false;
         }
@@ -71,6 +71,8 @@ public class terror1 : thowables
         }
         else if(is_thrown)
         {
+            if(state == State.picked_up)
+                y_start = transform.position.y;
             state = State.thrown;
             is_picked = false;
         }
@@ -82,10 +84,8 @@ public class terror1 : thowables
         }
         else
         {
-            state = State.thrown;
+            state = State.defualt;
         }
-        p += " after: " + state.ToString();
-        // Debug.Log(p);
     }
 
     void get_state()
