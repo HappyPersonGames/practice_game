@@ -17,12 +17,13 @@ public class damagebox : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "pain_ball")
-        {
-            gameObject.GetComponentInParent<combat>().health -= 10;
-            Destroy(other.gameObject);
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if(other.tag == "pain_ball")
+    //     {
+    //         gameObject.GetComponentInParent<combat>().health -= 10;
+    //         GetComponent<Rigidbody2D>().AddForce();
+    //         Destroy(other.gameObject);
+    //     }
+    // }
 }

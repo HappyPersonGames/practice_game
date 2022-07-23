@@ -14,7 +14,7 @@ public class terror1 : thowables
     // Update is called once per frame
     void Update()
     {
-        isDetected = GetComponent<terror_movment>().isDetected;
+        isDetected = GetComponent<shooting>().isDetected;
         if(health <= 0)
         {
             if(this.gameObject.GetComponentInChildren<SpriteRenderer>().material != dead)
@@ -34,7 +34,6 @@ public class terror1 : thowables
         {
             damage = 5*Mathf.Abs(y_start-y_end);
             health -= damage;
-            //Debug.Log(name + " got " + damage + " fall damage");
         }
             
     }
@@ -44,13 +43,11 @@ public class terror1 : thowables
         if(other.tag == "throwable")
         {
             health -= other.GetComponent<thowables>().damage;
-           // Debug.Log(name + " got " + other.GetComponent<thowables>().damage + " from "+ other.name);
         }
     }
 
     void set_state()
     {
-        string p = "before: " + state.ToString();
         if(health <= 0)
         {
             state = State.dead;
