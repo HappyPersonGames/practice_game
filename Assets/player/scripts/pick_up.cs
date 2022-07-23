@@ -7,7 +7,7 @@ public class pick_up : MonoBehaviour
     private Rigidbody2D rb2;
     public bool isUp;
     public Vector3 position;
-    public Vector2 throw_force = new Vector2(1000, 1000);
+    public Vector2 throw_force = new Vector2(2000, 2000);
     public Collider2D pickupCol;
     public GameObject map;
     public GameObject picked;
@@ -27,12 +27,12 @@ public class pick_up : MonoBehaviour
         if(this.transform.localScale.x > 0)
         {
             position.x = 1.2f;
-            throw_force.x = 1000;
+            throw_force.x = 2000;
         }
         if(this.transform.localScale.x < 0)
         {
             position.x = -1.2f;
-            throw_force.x = -1000;
+            throw_force.x = -2000;
         }
         if(Input.GetKeyDown(KeyCode.F))
         {

@@ -30,7 +30,7 @@ public class shooting : MonoBehaviour
         {
             curr = Time.fixedTime;
             should_shoot = false;
-            if(target != new Vector3(Mathf.Infinity,Mathf.Infinity,Mathf.Infinity))
+            if(!target.Equals(new Vector3(Mathf.Infinity,Mathf.Infinity,Mathf.Infinity)))
                 shoot(target);  
             should_shoot = true;
         }
@@ -39,9 +39,7 @@ public class shooting : MonoBehaviour
     private void shoot(Vector3 target)
     {
         GameObject spawned_proj = Instantiate(projctile, new Vector3(transform.position.x, transform.position.y + 0.7f, 0f), transform.rotation);
-        
         spawned_proj.AddComponent<projectile>().set_target(target);
-
     }
 
     Vector3 playerDetection()
