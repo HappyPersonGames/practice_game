@@ -25,4 +25,9 @@ public class combat : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void do_damage(float damage)
+    {
+        health -= damage;
+    }
 }

@@ -10,6 +10,8 @@ public class terror1 : thowables
     public bool isDetected = false;
     private float y_start = 0;
     private float y_end = 0;
+    private float fall_damage_mult = 5f;
+    private float body_cleanup_time = 5f;
     
     // Update is called once per frame
     void Update()
@@ -19,7 +21,7 @@ public class terror1 : thowables
         {
             if(this.gameObject.GetComponentInChildren<SpriteRenderer>().material != dead)
             {
-                Destroy(gameObject, 5);
+                Destroy(gameObject, body_cleanup_time);
                 this.gameObject.GetComponentInChildren<SpriteRenderer>().material = dead;
                 this.tag = "Untagged";
             }
@@ -32,8 +34,8 @@ public class terror1 : thowables
         set_state();
         if(tempState && state == State.idle)
         {
-            damage = 5*Mathf.Abs(y_start-y_end);
-            health -= damage;
+            damage = fall_damage_mult*Mathf.Abs(y_start-y_end);
+            do_damage(damage);
         }
             
     }
@@ -42,7 +44,7 @@ public class terror1 : thowables
     {
         if(other.tag == "throwable")
         {
-            health -= other.GetComponent<thowables>().damage;
+            do_damage(other.GetComponent<thowables>().damage);
         }
     }
 
@@ -90,4 +92,8 @@ public class terror1 : thowables
 
     }
     
+    public void do_damage(float damage)
+    {
+        health -= damage;
+    }
 }

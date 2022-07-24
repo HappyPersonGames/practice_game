@@ -61,4 +61,9 @@ public class thowables : MonoBehaviour
             is_thrown = true;
         }
     }
+
+    public void do_damage(float damage)
+    {
+        
+    }
 }

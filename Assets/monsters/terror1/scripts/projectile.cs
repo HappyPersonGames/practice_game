@@ -23,7 +23,7 @@ public class projectile : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponentInParent<combat>().health -= damage;
+            other.GetComponentInParent<combat>().do_damage(damage);
         }
         if(other.tag != "throwable" && other.tag != "player_pickup")
             Destroy(this.gameObject);
