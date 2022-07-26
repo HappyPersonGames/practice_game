@@ -62,7 +62,7 @@ public class thowables : MonoBehaviour
         }
     }
 
-    public void do_damage(float damage)
+    public virtual void do_damage(float damage)
     {
         
     }

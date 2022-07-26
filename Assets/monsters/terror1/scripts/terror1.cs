@@ -92,7 +92,7 @@ public class terror1 : thowables
 
     }
     
-    public void do_damage(float damage)
+    public override void do_damage(float damage)
     {
         health -= damage;
     }
