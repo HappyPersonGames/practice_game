@@ -14,7 +14,7 @@ public class spikes : MonoBehaviour
         }
         if(other.tag == "throwable")
         {
-            other.GetComponentInParent<thowables>().do_damage_knockback(damage, (other.transform.position - transform.position)*1000);
+            other.GetComponent<thowables>().do_damage_knockback(damage, (other.transform.position - transform.position)*1000);
             
         }
     }
@@ -23,6 +23,11 @@ public class spikes : MonoBehaviour
     {
         if(other.tag == "throwable")
             other.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1000, 0));
+        if(other.tag == "Player")
+        {
+            other.GetComponentInParent<Rigidbody2D>().AddForce(new Vector3(0, 1000, 0));
+        }
     }
+
 
 }

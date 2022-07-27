@@ -25,12 +25,22 @@ public class terror_movment : MonoBehaviour
             rb.velocity = new Vector2(speed * Time.fixedDeltaTime,0);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
+        if(GetComponent<terror1>().state != State.picked_up)
+        {
+            if(speed < 0)
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            else if(speed > 0)
+                transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag != "player_pickup")
+        {
             speed *= -1;
+            
+        }
 
     }
     

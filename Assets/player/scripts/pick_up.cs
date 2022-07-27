@@ -26,12 +26,12 @@ public class pick_up : MonoBehaviour
     {
         if(this.transform.localScale.x > 0)
         {
-            position.x = 1.2f;
+            position.x = 1.5f;
             throw_force.x = 2000;
         }
         if(this.transform.localScale.x < 0)
         {
-            position.x = -1.2f;
+            position.x = -1.5f;
             throw_force.x = -2000;
         }
         if(Input.GetKeyDown(KeyCode.F))

@@ -12,7 +12,12 @@ public class terror1 : thowables
     private float y_end = 0;
     private float fall_damage_mult = 5f;
     private float body_cleanup_time = 5f;
+    private Collider2D jumpCol;
     
+    void Start()
+    {
+        jumpCol = GetComponentInChildren<BoxCollider2D>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -53,10 +58,11 @@ public class terror1 : thowables
         if(health <= 0)
         {
             state = State.dead;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
             is_thrown = false;
             is_picked = false;
         }
-        else if(GetComponent<BoxCollider2D>().IsTouchingLayers(layerMask) && (!isDetected || state == State.thrown))
+        else if(jumpCol.IsTouchingLayers(layerMask) && (!isDetected || state == State.thrown))
         {
             if(state == State.thrown)
                 y_end = transform.position.y;
@@ -78,6 +84,7 @@ public class terror1 : thowables
         else if(isDetected)
         {
             state = State.attack;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             is_picked = false;
             is_thrown = false;
         }

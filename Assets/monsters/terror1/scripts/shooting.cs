@@ -38,7 +38,8 @@ public class shooting : MonoBehaviour
 
     private void shoot(Vector3 target)
     {
-        GameObject spawned_proj = Instantiate(projctile, new Vector3(transform.position.x, transform.position.y + 0.7f, 0f), transform.rotation);
+        float projX = (target.x - transform.position.x)/MathF.Abs((target.x - transform.position.x));
+        GameObject spawned_proj = Instantiate(projctile, new Vector3(transform.position.x+projX, transform.position.y + 1f, 0f), Quaternion.Euler(new Vector3(0, 0, 0)));
         spawned_proj.AddComponent<projectile>().set_target(target);
     }
 
