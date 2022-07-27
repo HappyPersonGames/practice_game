@@ -66,4 +66,10 @@ public class thowables : MonoBehaviour
     {
         
     }
+
+    public void do_damage_knockback(float damage, Vector3 knock_back)
+    {
+        do_damage(damage);
+        GetComponent<Rigidbody2D>().AddForce(knock_back);
+    }
 }

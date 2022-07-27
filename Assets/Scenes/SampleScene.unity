@@ -1806,7 +1806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1759664630959237898, guid: 704dfab311fec4a408f0bda5d6973e52, type: 3}
       propertyPath: cool_down
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1759664630959237898, guid: 704dfab311fec4a408f0bda5d6973e52, type: 3}
       propertyPath: should_shoot

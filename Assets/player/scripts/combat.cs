@@ -30,4 +30,10 @@ public class combat : MonoBehaviour
     {
         health -= damage;
     }
+
+    public void do_damage(float damage, Vector3 knock_back)
+    {
+        health -= damage;
+        GetComponent<Rigidbody2D>().AddForce(knock_back);
+    }
 }
