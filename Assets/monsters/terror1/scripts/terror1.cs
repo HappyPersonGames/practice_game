@@ -103,4 +103,9 @@ public class terror1 : thowables
     {
         health -= damage;
     }
+
+    public override float get_damage()
+    {
+        return health;
+    }
 }

@@ -36,4 +36,9 @@ public class combat : MonoBehaviour
         health -= damage;
         GetComponent<Rigidbody2D>().AddForce(knock_back);
     }
+
+    public float get_damage()
+    {
+        return health;
+    }
 }
