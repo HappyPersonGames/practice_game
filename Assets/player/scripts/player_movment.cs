@@ -5,6 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class player_movment : MonoBehaviour
 {
@@ -15,17 +17,17 @@ public class player_movment : MonoBehaviour
     public bool is_in_air;
 
     public Collider2D jumpCollider;
+    public Collider2D door;
+    public Collider2D body;
 
     public float speed = 10;
     public float jump_force = 215;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontal_movement = Input.GetAxisRaw("Horizontal");
@@ -33,6 +35,10 @@ public class player_movment : MonoBehaviour
         {
             jump = true;
         }
+        if(Input.GetKeyDown(KeyCode.E) && door.IsTouching(body))
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 0);
+        }       
     }
 
     private void FixedUpdate()
@@ -56,6 +62,10 @@ public class player_movment : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        // if(Input.GetKeyDown(KeyCode.E) && other.tag == "door")
+        // {
+        //     SceneManager.LoadScene(sceneBuildIndex: 0);
+        // }
         if(jumpCollider.IsTouching(other))
         {
             is_in_air = false;
