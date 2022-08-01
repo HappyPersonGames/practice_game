@@ -37,7 +37,7 @@ public class player_movment : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.E) && door.IsTouching(body))
         {
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+            SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex+1);
         }       
     }
 

@@ -10,7 +10,7 @@ public class terror1 : thowables
     public bool isDetected = false;
     private float y_start = 0;
     private float y_end = 0;
-    private float fall_damage_mult = 5f;
+    private float fall_damage_mult = 15f;
     private float body_cleanup_time = 5f;
     private Collider2D jumpCol;
     

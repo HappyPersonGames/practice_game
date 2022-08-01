@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class health_bar : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class health_bar : MonoBehaviour
     public Sprite half;
     public Sprite oneQ;
     public Sprite empty;
+
+    private Slider slider;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        slider = GetComponentInChildren<Slider>();
     }
 
     // Update is called once per frame
@@ -32,15 +35,7 @@ public class health_bar : MonoBehaviour
 
     public void update_health_bar(float health)
     {
-        if(health > 75)
-            sr.sprite = full;
-        else if(health > 50)
-            sr.sprite = threeQ;
-        else if(health > 25)
-            sr.sprite = half;
-        else if(health > 0)
-            sr.sprite = oneQ;
-        else
-            sr.sprite = empty;
+        
+        slider.value = (health / 100f);
     }
 }

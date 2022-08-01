@@ -93,8 +93,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1520884104712804297, guid: 46003cca21bff9f45ae4c01d2d40a7b4, type: 3}
       propertyPath: m_Name
-      value: player
+      value: player with camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6539130158235525904, guid: 46003cca21bff9f45ae4c01d2d40a7b4, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 3882228592100742587}
     - target: {fileID: 8571673475754629161, guid: 46003cca21bff9f45ae4c01d2d40a7b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -144,5 +148,10 @@ PrefabInstance:
 --- !u!4 &1849688562768033842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8571673475754629161, guid: 46003cca21bff9f45ae4c01d2d40a7b4, type: 3}
+  m_PrefabInstance: {fileID: 8025373227718680603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &3882228592100742587 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6539130158628844960, guid: 46003cca21bff9f45ae4c01d2d40a7b4, type: 3}
   m_PrefabInstance: {fileID: 8025373227718680603}
   m_PrefabAsset: {fileID: 0}

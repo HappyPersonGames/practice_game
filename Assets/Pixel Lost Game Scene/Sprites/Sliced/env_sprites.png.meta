@@ -1754,7 +1754,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15.9
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1782,9 +1782,33 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -13831,11 +13855,11 @@ TextureImporter:
       env_sprites_89: 21300178
       env_sprites_190: 21300380
       env_sprites_357: 21300714
-      env_sprites_15: 21300030
+      env_sprites_419: 21300838
       env_sprites_32: 21300064
       env_sprites_140: 21300280
       env_sprites_120: 21300240
-      env_sprites_419: 21300838
+      env_sprites_15: 21300030
       env_sprites_213: 21300426
       env_sprites_404: 21300808
       env_sprites_334: 21300668
@@ -14046,13 +14070,13 @@ TextureImporter:
       env_sprites_194: 21300388
       env_sprites_182: 21300364
       env_sprites_211: 21300422
-      env_sprites_314: 21300628
+      env_sprites_466: 21300932
       env_sprites_1: 21300002
       env_sprites_260: 21300520
+      env_sprites_314: 21300628
       env_sprites_24: 21300048
       env_sprites_174: 21300348
       env_sprites_534: 21301068
-      env_sprites_466: 21300932
       env_sprites_528: 21301056
       env_sprites_461: 21300922
       env_sprites_100: 21300200
@@ -14060,8 +14084,8 @@ TextureImporter:
       env_sprites_408: 21300816
       env_sprites_428: 21300856
       env_sprites_43: 21300086
-      env_sprites_508: 21301016
       env_sprites_568: 21301136
+      env_sprites_508: 21301016
       env_sprites_9: 21300018
       env_sprites_252: 21300504
       env_sprites_522: 21301044
@@ -14088,9 +14112,9 @@ TextureImporter:
       env_sprites_184: 21300368
       env_sprites_119: 21300238
       env_sprites_19: 21300038
-      env_sprites_171: 21300342
       env_sprites_382: 21300764
       env_sprites_423: 21300846
+      env_sprites_171: 21300342
       env_sprites_410: 21300820
       env_sprites_497: 21300994
       env_sprites_219: 21300438
