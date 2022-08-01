@@ -14,14 +14,12 @@ public class pick_up : MonoBehaviour
 
     public bool pressed_key = false;
     
-    // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
         isUp = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(this.transform.localScale.x > 0)
