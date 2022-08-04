@@ -9,7 +9,7 @@ public class terror2_movment : MonoBehaviour
     public GameObject target;
     
     private Vector2 last_pos;
-    public float jump_cooldown = 2;
+    public float jump_cooldown = 0.2f;
     public float last_jump;
     
 
@@ -28,7 +28,6 @@ public class terror2_movment : MonoBehaviour
 
             rb.velocity =   (target.transform.position - transform.position);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            Debug.Log(Vector3.Distance(last_pos, transform.position));
             
         }
         if(GetComponent<terror2>().state != State.picked_up)
@@ -45,7 +44,7 @@ public class terror2_movment : MonoBehaviour
     {
         if(GetComponent<terror2>().state == State.idle)
         {
-            if(Vector3.Distance(last_pos, transform.position) < 0.14)
+            if(Vector3.Distance(last_pos, transform.position) < 0.1)
             {
                 
                 jump();
@@ -80,10 +79,11 @@ public class terror2_movment : MonoBehaviour
 
     public void jump()
     {
-        if(Time.fixedTime - last_jump > jump_cooldown)
-        {
-            rb.AddForce(new Vector2(0, 500));
+        Debug.Log("jump");
+        // if(Time.fixedTime - last_jump > jump_cooldown)
+        // {
+            rb.AddForce(new Vector2(0, 7000));
             last_jump = Time.fixedTime;
-        }
+        // }
     }
 }
