@@ -397,6 +397,7 @@ MonoBehaviour:
   health: 100
   dead: {fileID: 0}
   isDetected: 0
+  jumpCol: {fileID: 2460305679703678082}
 --- !u!114 &3294041150328733600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +432,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
+  target: {fileID: 0}
+  jump_cooldown: 2
+  last_jump: 0
 --- !u!1 &4010384475714766355
 GameObject:
   m_ObjectHideFlags: 0
