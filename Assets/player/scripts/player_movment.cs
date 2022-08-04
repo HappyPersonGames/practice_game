@@ -35,10 +35,11 @@ public class player_movment : MonoBehaviour
         {
             jump = true;
         }
-        if(Input.GetKeyDown(KeyCode.E) && door.IsTouching(body))
-        {
-            SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex+1);
-        }       
+        if(door != null)
+            if(Input.GetKeyDown(KeyCode.E) && door.IsTouching(body))
+            {
+                SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex+1);
+            }       
     }
 
     private void FixedUpdate()
