@@ -416,8 +416,8 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 8
-  damage: 0
-  range: 0
+  damage: 10
+  range: 1
 --- !u!114 &1182900714314847459
 MonoBehaviour:
   m_ObjectHideFlags: 0

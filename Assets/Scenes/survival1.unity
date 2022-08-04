@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294041150328733600, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
       propertyPath: range
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294041150328733600, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
       propertyPath: damage
@@ -3653,7 +3653,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

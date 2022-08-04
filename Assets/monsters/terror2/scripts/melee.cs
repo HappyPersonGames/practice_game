@@ -31,6 +31,7 @@ public class melee : MonoBehaviour
         {
             curr = Time.fixedTime;
             should_shoot = false;
+            Debug.Log(target);
             if(target != null)
                 attack(target);  
             should_shoot = true;
@@ -40,6 +41,7 @@ public class melee : MonoBehaviour
     private void attack(combat target)
     {
         target.do_damage(damage);
+        
 
     }
 
@@ -50,8 +52,9 @@ public class melee : MonoBehaviour
             Debug.DrawRay(transform.position,item.transform.position - transform.position, Color.green);
             if(Physics2D.Raycast(transform.position,item.transform.position - transform.position, range,player))
             {
+
                 isDetected = true;
-                return item.GetComponent<combat>();
+                return item.GetComponentInParent<combat>();
             }
         }
         isDetected = false;
