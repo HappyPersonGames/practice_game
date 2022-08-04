@@ -253,11 +253,11 @@ GameObject:
   - component: {fileID: 4808163816151041193}
   - component: {fileID: 1759664630959237937}
   - component: {fileID: 1759664630959237936}
-  - component: {fileID: 2630523639059929090}
   - component: {fileID: 1759664630959237903}
   - component: {fileID: 1939070084246283367}
   - component: {fileID: 6556850707795222679}
   - component: {fileID: 3294041150328733600}
+  - component: {fileID: 1182900714314847459}
   m_Layer: 0
   m_Name: terror2_prefab
   m_TagString: throwable
@@ -331,20 +331,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.21, y: 1.91}
   m_EdgeRadius: 0
---- !u!114 &2630523639059929090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419929486436436096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7860ca55d37cf124fb2c3fbdcb74f6f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 200
-  isDetected: 0
 --- !u!61 &1759664630959237903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -406,7 +392,7 @@ MonoBehaviour:
   is_picked: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   state: 0
   health: 100
   dead: {fileID: 0}
@@ -429,9 +415,22 @@ MonoBehaviour:
   players: []
   player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   damage: 0
   range: 0
+--- !u!114 &1182900714314847459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419929486436436096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc61b2a8df59a84489919fc512632478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
 --- !u!1 &4010384475714766355
 GameObject:
   m_ObjectHideFlags: 0
