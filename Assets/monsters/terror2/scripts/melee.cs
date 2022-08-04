@@ -31,7 +31,6 @@ public class melee : MonoBehaviour
         {
             curr = Time.fixedTime;
             should_shoot = false;
-            Debug.Log(target);
             if(target != null)
                 attack(target);  
             should_shoot = true;

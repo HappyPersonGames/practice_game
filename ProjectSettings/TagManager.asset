@@ -11,6 +11,7 @@ TagManager:
   - pain_ball
   - edge
   - door
+  - spawn
   layers:
   - Default
   - TransparentFX

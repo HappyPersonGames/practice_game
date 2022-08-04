@@ -27,6 +27,7 @@ public class terror2 : thowables
             if(this.gameObject.GetComponentInChildren<SpriteRenderer>().material != dead)
             {
                 Destroy(gameObject, body_cleanup_time);
+                GetComponent<Terror_Spawn>().numOfEnemies--;
                 this.gameObject.GetComponentInChildren<SpriteRenderer>().material = dead;
                 this.tag = "Untagged";
             }
