@@ -265,6 +265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+--- !u!61 &748829386 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2460305679703678082, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+  m_PrefabInstance: {fileID: 771827589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &771827589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6556850707795222679, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+      propertyPath: jumpCol
+      value: 
+      objectReference: {fileID: 748829386}
     - target: {fileID: 6556850707795222679, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
       propertyPath: layerMask.m_Bits
       value: 64
