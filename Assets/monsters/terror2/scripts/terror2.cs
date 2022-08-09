@@ -14,10 +14,12 @@ public class terror2 : thowables
     private float body_cleanup_time = 5f;
     [SerializeField]
     private Collider2D jumpCol;
+    private Terror_Spawn ts;
     
     void Start()
     {
         // jumpCol = GetComponentInChildren<BoxCollider2D>();
+        is_thrown = true;
     }
     // Update is called once per frame
     void Update()

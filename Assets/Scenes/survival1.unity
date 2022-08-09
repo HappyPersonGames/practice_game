@@ -660,6 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152364720}
   - component: {fileID: 1152364721}
+  - component: {fileID: 1152364722}
   m_Layer: 0
   m_Name: spawn1
   m_TagString: spawn
@@ -695,6 +696,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrorPrefab: {fileID: 2419929486436436096, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+  numOfEnemies: 2
+--- !u!114 &1152364722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152364719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a5d8f8f34a44f4195ae62899731d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  living_entities: []
 --- !u!1 &1665823436
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665823437}
+  - component: {fileID: 1665823438}
   m_Layer: 0
   m_Name: gamemode
   m_TagString: Untagged
@@ -728,6 +744,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1665823438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665823436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a3c8b7e5bfedc4799f6b291b56b0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrorPrefab: {fileID: 2419929486436436096, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+  numOfEnemies: 0
+  spawners: []
 --- !u!1 &1671003931
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1671003932}
   - component: {fileID: 1671003933}
+  - component: {fileID: 1671003934}
   m_Layer: 0
   m_Name: spawn2
   m_TagString: spawn
@@ -773,6 +805,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrorPrefab: {fileID: 2419929486436436096, guid: 4ec3b09b73a9cfe468a89f979ce49caa, type: 3}
+  numOfEnemies: 2
+--- !u!114 &1671003934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671003931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a5d8f8f34a44f4195ae62899731d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  living_entities: []
 --- !u!1 &1763709612
 GameObject:
   m_ObjectHideFlags: 0

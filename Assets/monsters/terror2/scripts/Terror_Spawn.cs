@@ -11,13 +11,13 @@ public class Terror_Spawn : MonoBehaviour
     public int numOfEnemies = 2;
     void Start()
     {
-        StartCoroutine(spawnEnemy(spawnTimer,terrorPrefab));
+        // StartCoroutine(spawnEnemy(spawnTimer,terrorPrefab));
     }
 
     private IEnumerator spawnEnemy(float spawnTimer, GameObject enemy)
     {
         yield return new WaitForSeconds(spawnTimer);
-        Debug.Log(numOfEnemies);
+        // Debug.Log(numOfEnemies);
         if(numOfEnemies < MAX_ENEMIES)
         {
             GameObject newEnemy = Instantiate(enemy,transform.position,Quaternion.identity);
